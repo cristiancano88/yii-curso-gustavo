@@ -648,3 +648,105 @@ Stack trace:
 REQUEST_URI=/yii-curso-gustavo/usuarios/index.html
 HTTP_REFERER=http://localhost/yii-curso-gustavo/
 ---
+2015/10/09 05:35:41 [error] [exception.CException] exception 'CException' with message 'La propiedad "Experiencia"."usuarios_id" no se encuentra definida.' in C:\xampp\htdocs\yii\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(145): CComponent->__get('usuarios_id')
+#1 C:\xampp\htdocs\yii\web\helpers\CHtml.php(2728): CActiveRecord->__get('usuarios_id')
+#2 C:\xampp\htdocs\yii\web\helpers\CHtml.php(1981): CHtml::resolveValue(Object(Experiencia), 'usuarios_id')
+#3 C:\xampp\htdocs\yii\web\widgets\CActiveForm.php(914): CHtml::activeDropDownList(Object(Experiencia), 'usuarios_id', Array, Array)
+#4 C:\xampp\htdocs\yii-curso-gustavo\protected\views\experiencia\_form.php(24): CActiveForm->dropDownList(Object(Experiencia), 'usuarios_id', Array, Array)
+#5 C:\xampp\htdocs\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii-curso-gustavo\protected\views\experiencia\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\yii-curso-gustavo\protected\controllers\ExperienciaController.php(79): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(49): ExperienciaController->actionCreate()
+#15 C:\xampp\htdocs\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('experiencia/cre...')
+#25 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/yii-curso-gustavo/experiencia/create.html
+HTTP_REFERER=http://localhost/yii-curso-gustavo/experiencia/index.html
+---
+2015/10/09 05:47:08 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`yii-curso-gustavo`.`experiencia`, CONSTRAINT `experiencia_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`)). La sentencia SQL ejecutada fue: INSERT INTO `experiencia` (`usuario_id`, `empresa`, `inicio`, `finalizacion`, `jefe`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4).
+2015/10/09 05:47:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`yii-curso-gustavo`.`experiencia`, CONSTRAINT `experiencia_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`)). The SQL statement executed was: INSERT INTO `experiencia` (`usuario_id`, `empresa`, `inicio`, `finalizacion`, `jefe`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4)' in C:\xampp\htdocs\yii\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\yii-curso-gustavo\protected\controllers\ExperienciaController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(49): ExperienciaController->actionCreate()
+#4 C:\xampp\htdocs\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('experiencia/cre...')
+#14 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii-curso-gustavo/experiencia/create.html
+HTTP_REFERER=http://localhost/yii-curso-gustavo/experiencia/create.html
+---
+2015/10/09 05:48:12 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`yii-curso-gustavo`.`experiencia`, CONSTRAINT `experiencia_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`)). La sentencia SQL ejecutada fue: INSERT INTO `experiencia` (`usuario_id`, `empresa`, `inicio`, `finalizacion`, `jefe`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4).
+2015/10/09 05:48:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`yii-curso-gustavo`.`experiencia`, CONSTRAINT `experiencia_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`)). The SQL statement executed was: INSERT INTO `experiencia` (`usuario_id`, `empresa`, `inicio`, `finalizacion`, `jefe`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4)' in C:\xampp\htdocs\yii\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\yii-curso-gustavo\protected\controllers\ExperienciaController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(49): ExperienciaController->actionCreate()
+#4 C:\xampp\htdocs\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('experiencia/cre...')
+#14 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii-curso-gustavo/experiencia/create.html
+HTTP_REFERER=http://localhost/yii-curso-gustavo/experiencia/create.html
+---
+2015/10/09 05:50:29 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`yii-curso-gustavo`.`experiencia`, CONSTRAINT `experiencia_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`)). La sentencia SQL ejecutada fue: INSERT INTO `experiencia` (`usuario_id`, `empresa`, `inicio`, `finalizacion`, `jefe`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4).
+2015/10/09 05:50:29 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`yii-curso-gustavo`.`experiencia`, CONSTRAINT `experiencia_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`)). The SQL statement executed was: INSERT INTO `experiencia` (`usuario_id`, `empresa`, `inicio`, `finalizacion`, `jefe`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4)' in C:\xampp\htdocs\yii\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\yii-curso-gustavo\protected\controllers\ExperienciaController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(49): ExperienciaController->actionCreate()
+#4 C:\xampp\htdocs\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('experiencia/cre...')
+#14 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii-curso-gustavo/experiencia/create.html
+HTTP_REFERER=http://localhost/yii-curso-gustavo/experiencia/create.html
+---

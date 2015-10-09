@@ -21,7 +21,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'usuario_id'); ?>
-		<?php echo $form->textField($model,'usuario_id'); ?>
+		<?php echo $form->dropDownList($model,'usuario_id',CHtml::listData(Usuarios::model()->findAll(" estado = 1"),'id','nombre'),array('empty'=>'seleccione Usuario')); ?>
 		<?php echo $form->error($model,'usuario_id'); ?>
 	</div>
 
@@ -33,13 +33,42 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'inicio'); ?>
-		<?php echo $form->textField($model,'inicio'); ?>
+		<?php //echo $form->textField($model,'inicio'); 
+                $this->widget('zii.widgets.jui.CJuiDatePicker',
+                    array(
+                        'model'=>$model,
+                        'attribute'=>'inicio',
+                        'language' => 'es',
+                        'options' => array(
+                            'dateFormat'=>'yy-mm-dd',
+                            'constrainInput' => 'false',
+                            'duration'=>'fast',
+                            'showAnim' =>'slide',
+                        ),
+                    )
+                );
+                
+                ?>
 		<?php echo $form->error($model,'inicio'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'finalizacion'); ?>
-		<?php echo $form->textField($model,'finalizacion'); ?>
+		<?php //echo $form->textField($model,'finalizacion'); 
+                $this->widget('zii.widgets.jui.CJuiDatePicker',
+                    array(
+                        'model'=>$model,
+                        'attribute'=>'finalizacion',
+                        'language' => 'es',
+                        'options' => array(
+                            'dateFormat'=>'yy-mm-dd',
+                            'constrainInput' => 'false',
+                            'duration'=>'fast',
+//                            'showAnim' =>'slide',
+                        ),
+                    )
+                );
+                ?>
 		<?php echo $form->error($model,'finalizacion'); ?>
 	</div>
 

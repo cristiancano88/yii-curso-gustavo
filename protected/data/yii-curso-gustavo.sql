@@ -1,0 +1,352 @@
+-- phpMyAdmin SQL Dump
+-- version 4.2.11
+-- http://www.phpmyadmin.net
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 09-10-2015 a las 05:59:47
+-- Versión del servidor: 5.6.21
+-- Versión de PHP: 5.6.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Base de datos: `yii-curso-gustavo`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ciudad`
+--
+
+CREATE TABLE IF NOT EXISTS `ciudad` (
+`id` int(100) NOT NULL,
+  `nombre` varchar(100) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `ciudad`
+--
+
+INSERT INTO `ciudad` (`id`, `nombre`) VALUES
+(1, 'Madrid'),
+(2, 'Lima'),
+(3, 'Buenos Aires'),
+(4, 'Quito'),
+(5, 'Caracas'),
+(6, 'Medellin');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `estudios`
+--
+
+CREATE TABLE IF NOT EXISTS `estudios` (
+`id` int(11) NOT NULL,
+  `usuario_id` int(100) NOT NULL DEFAULT '0',
+  `institucion` varchar(255) NOT NULL DEFAULT '0',
+  `anio_graduacion` int(4) NOT NULL DEFAULT '0',
+  `titulo` varchar(50) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `experiencia`
+--
+
+CREATE TABLE IF NOT EXISTS `experiencia` (
+`id` int(11) NOT NULL,
+  `usuario_id` int(100) NOT NULL DEFAULT '0',
+  `empresa` varchar(200) NOT NULL DEFAULT '0',
+  `inicio` date NOT NULL DEFAULT '0000-00-00',
+  `finalizacion` date NOT NULL DEFAULT '0000-00-00',
+  `jefe` varchar(100) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `experiencia`
+--
+
+INSERT INTO `experiencia` (`id`, `usuario_id`, `empresa`, `inicio`, `finalizacion`, `jefe`) VALUES
+(1, 1, 'empresa1', '2010-11-11', '2015-11-11', 'Osar'),
+(2, 1, 'empresa2', '2005-11-11', '2008-11-11', 'pedro'),
+(6, 1, 'Empresa3', '2015-09-01', '2015-10-01', 'Oscar');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `folio`
+--
+
+CREATE TABLE IF NOT EXISTS `folio` (
+`id` int(11) NOT NULL,
+  `usuario_id` int(100) NOT NULL DEFAULT '0',
+  `lugar` varchar(200) NOT NULL DEFAULT '0',
+  `psicologica` int(10) NOT NULL DEFAULT '0',
+  `tecnica` int(10) NOT NULL DEFAULT '0',
+  `entrevista` int(10) NOT NULL DEFAULT '0',
+  `puntaje` int(10) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `folio`
+--
+
+INSERT INTO `folio` (`id`, `usuario_id`, `lugar`, `psicologica`, `tecnica`, `entrevista`, `puntaje`) VALUES
+(1, 1, 'B3', 3, 4, 3, 2),
+(2, 2, 'B3', 5, 5, 5, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tareas`
+--
+
+CREATE TABLE IF NOT EXISTS `tareas` (
+`id` int(11) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `descripcion` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `tareas`
+--
+
+INSERT INTO `tareas` (`id`, `nombre`, `descripcion`) VALUES
+(1, 'task 1', 'descr 1'),
+(2, 'task 2', 'descr 2'),
+(3, 'task 3', 'descr 3');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tareas_gii`
+--
+
+CREATE TABLE IF NOT EXISTS `tareas_gii` (
+`id` int(11) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `descripcion` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `tareas_gii`
+--
+
+INSERT INTO `tareas_gii` (`id`, `nombre`, `descripcion`) VALUES
+(1, 'task1', 'descr1');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE IF NOT EXISTS `usuarios` (
+`id` int(100) NOT NULL,
+  `ciudad_id` int(11) NOT NULL DEFAULT '0',
+  `nombre` varchar(100) NOT NULL DEFAULT '0',
+  `email` varchar(100) NOT NULL DEFAULT '0',
+  `estado` tinyint(1) NOT NULL DEFAULT '0',
+  `identificacion` int(100) NOT NULL DEFAULT '0',
+  `genero` varchar(1) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `ciudad_id`, `nombre`, `email`, `estado`, `identificacion`, `genero`) VALUES
+(1, 1, 'Juan prez', 'juan@gmail.com', 1, 111111111, 'M'),
+(2, 2, 'Pedro', 'pedro@gmail.com', 0, 222222222, 'M');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `vacantes`
+--
+
+CREATE TABLE IF NOT EXISTS `vacantes` (
+`id` int(100) NOT NULL,
+  `nombre` varchar(100) NOT NULL DEFAULT '0',
+  `descripcion` varchar(200) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `vacantes`
+--
+
+INSERT INTO `vacantes` (`id`, `nombre`, `descripcion`) VALUES
+(1, 'vacnte 1', 'csdc dscdsc dscdsc dscds'),
+(2, 'vacante 2', 'sjc uasgduy auhdeiy kshdbeij skjd'),
+(3, 'vacante 3', 'wudhwu uiwhd jduw'),
+(4, 'vacante 3', 'skdj kdhi ksuhdbwd nsuodb');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `vacantes_usuarios`
+--
+
+CREATE TABLE IF NOT EXISTS `vacantes_usuarios` (
+  `vacantes_id` int(100) DEFAULT NULL,
+  `usuarios_id` int(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `vacantes_usuarios`
+--
+
+INSERT INTO `vacantes_usuarios` (`vacantes_id`, `usuarios_id`) VALUES
+(1, 1),
+(2, 2);
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `ciudad`
+--
+ALTER TABLE `ciudad`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `estudios`
+--
+ALTER TABLE `estudios`
+ ADD PRIMARY KEY (`id`), ADD KEY `usuario_id` (`usuario_id`);
+
+--
+-- Indices de la tabla `experiencia`
+--
+ALTER TABLE `experiencia`
+ ADD PRIMARY KEY (`id`), ADD KEY `usuario_id` (`usuario_id`);
+
+--
+-- Indices de la tabla `folio`
+--
+ALTER TABLE `folio`
+ ADD PRIMARY KEY (`id`), ADD KEY `usuario_id` (`usuario_id`);
+
+--
+-- Indices de la tabla `tareas`
+--
+ALTER TABLE `tareas`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `tareas_gii`
+--
+ALTER TABLE `tareas_gii`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+ ADD PRIMARY KEY (`id`), ADD KEY `ciudad_id` (`ciudad_id`);
+
+--
+-- Indices de la tabla `vacantes`
+--
+ALTER TABLE `vacantes`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `vacantes_usuarios`
+--
+ALTER TABLE `vacantes_usuarios`
+ ADD KEY `vacantes_id` (`vacantes_id`), ADD KEY `usuarios_id` (`usuarios_id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `ciudad`
+--
+ALTER TABLE `ciudad`
+MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT de la tabla `estudios`
+--
+ALTER TABLE `estudios`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `experiencia`
+--
+ALTER TABLE `experiencia`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT de la tabla `folio`
+--
+ALTER TABLE `folio`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `tareas`
+--
+ALTER TABLE `tareas`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de la tabla `tareas_gii`
+--
+ALTER TABLE `tareas_gii`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `vacantes`
+--
+ALTER TABLE `vacantes`
+MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `estudios`
+--
+ALTER TABLE `estudios`
+ADD CONSTRAINT `estudios_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`);
+
+--
+-- Filtros para la tabla `experiencia`
+--
+ALTER TABLE `experiencia`
+ADD CONSTRAINT `experiencia_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`);
+
+--
+-- Filtros para la tabla `folio`
+--
+ALTER TABLE `folio`
+ADD CONSTRAINT `folio_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`);
+
+--
+-- Filtros para la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`ciudad_id`) REFERENCES `ciudad` (`id`);
+
+--
+-- Filtros para la tabla `vacantes_usuarios`
+--
+ALTER TABLE `vacantes_usuarios`
+ADD CONSTRAINT `vacantes_usuarios_ibfk_1` FOREIGN KEY (`usuarios_id`) REFERENCES `usuarios` (`id`),
+ADD CONSTRAINT `vacantes_usuarios_ibfk_2` FOREIGN KEY (`vacantes_id`) REFERENCES `vacantes` (`id`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

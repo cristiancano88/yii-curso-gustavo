@@ -21,7 +21,8 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'ciudad_id'); ?>
-		<?php echo $form->textField($model,'ciudad_id'); ?>
+		<?php // echo $form->dropDownList($model,'ciudad_id',Usuarios::getListCiudad(),array('empty '=>'Seleccione ciudad')); ?>
+		<?php echo $form->dropDownList($model,'ciudad_id',CHtml::listData(Ciudad::model()->findAll(),'id','nombre'), array('empty'=> 'Seleccine ciudad')); ?>
 		<?php echo $form->error($model,'ciudad_id'); ?>
 	</div>
 
@@ -39,7 +40,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'estado'); ?>
-		<?php echo $form->textField($model,'estado'); ?>
+		<?php echo $form->dropDownList($model,'estado',array(''=>'','1'=>'Activo','0'=>'Inactivo')); ?>
 		<?php echo $form->error($model,'estado'); ?>
 	</div>
 
@@ -51,7 +52,8 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'genero'); ?>
-		<?php echo $form->textField($model,'genero',array('size'=>1,'maxlength'=>1)); ?>
+		<?php // echo $form->textField($model,'genero',array('size'=>1,'maxlength'=>1)); ?>
+                <?php echo $form->dropDownList($model,'genero',Usuarios::getGenero()); ?>
 		<?php echo $form->error($model,'genero'); ?>
 	</div>
 
