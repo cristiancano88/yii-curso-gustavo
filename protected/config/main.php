@@ -11,6 +11,7 @@ return array(
         'language'=>'es',
         'sourceLanguage'=>'en',
         'charset'=>'utf-8',
+        //'defaultController'=>'controlador/admin', // Vista por defecto 
 
 	// preloading 'log' component
 	'preload'=>array('log'),
