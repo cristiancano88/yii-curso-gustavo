@@ -35,6 +35,7 @@
 				array('label'=>'Experiencia', 'url'=>array('/experiencia/index')),
 				array('label'=>'Estudios', 'url'=>array('/estudios/index')),
 				array('label'=>'Folio', 'url'=>array('/folio/index')),
+				array('label'=>'Categoria', 'url'=>array('/categorias/index')),
 				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'Contact', 'url'=>array('/site/contact')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),

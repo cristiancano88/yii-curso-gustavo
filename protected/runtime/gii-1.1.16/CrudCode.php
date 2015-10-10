@@ -1,5 +1,5 @@
 <?php
 return array (
-  'template' => 'default',
+  'template' => 'traducido',
   'baseControllerClass' => 'Controller',
 );

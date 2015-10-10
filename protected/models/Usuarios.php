@@ -19,7 +19,10 @@
  * @property Ciudad $ciudad
  */
 class Usuarios extends CActiveRecord {
-
+    
+    public $mi_campo;
+    public $nombre;
+    public $actualizar_estado;
     public static $generos = array('' => '', 'H' => 'Hombre', 'M' => 'Mujer');
 
     /**

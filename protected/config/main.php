@@ -26,6 +26,13 @@ return array(
             'password' => '123456',
             // If removed, Gii defaults to localhost only. Edit carefully to taste.
             'ipFilters' => array('127.0.0.1', '::1'),
+            /*
+             * Esta linea lo que hace es utilizar la plantilla que cree para los
+             * modelos en vez de la que utiliza yii por defecto.
+             * La explicacion de esto esta en el video 
+             * "18 YII Framework en Español PHP PERSONALIZAR GENERADOR DE CODIGO PARTE 1"
+            */
+            'generatorPaths'=>array('application.modules.gii')
         ),
     ),
     // application components
