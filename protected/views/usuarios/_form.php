@@ -21,8 +21,8 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'ciudad_id'); ?>
-		<?php // echo $form->dropDownList($model,'ciudad_id',Usuarios::getListCiudad(),array('empty '=>'Seleccione ciudad')); ?>
-		<?php echo $form->dropDownList($model,'ciudad_id',CHtml::listData(Ciudad::model()->findAll(),'id','nombre'), array('empty'=> 'Seleccine ciudad')); ?>
+		<?php echo $form->dropDownList($model,'ciudad_id',Usuarios::getListCiudad(),array('empty '=>'Seleccione ciudad')); ?>
+		<?php // echo $form->dropDownList($model,'ciudad_id',CHtml::listData(Ciudad::model()->findAll(),'id','nombre'), array('empty'=> 'Seleccine ciudad')); ?>
 		<?php echo $form->error($model,'ciudad_id'); ?>
 	</div>
 
