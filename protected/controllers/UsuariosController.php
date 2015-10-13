@@ -62,16 +62,75 @@ class UsuariosController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Usuarios;
-
+		$model=new Usuarios();
+                
+                //-----------------------------------
+                //Escenario es para trabajar con la reglas de validacion en el modelo
+//		  $model=new Usuarios('firme');
+//		  $model=new Usuarios('estupido');
+//                $model->scenario = 'firme';
+//                $model->scenario = 'estupido';
+//                $model->setScenario('firme');
+//                $model->setScenario('estupido');
+//                if( $model->getScenario() === 'firme' ) {
+//                    echo 'mi logica basica para Firme';
+//                } 
+//                if( $model->scenario() === 'firme' ) {
+//                    echo 'mi logica basica para Firme';
+//                }
+                
+                //----------------------------------
+                
+                //Guardar registro sin necesidad de un formulario
+                /*
+		$model=Usuarios::model()->findByPk(3);
+		$model->nombre='Otra forma de EDITAR nombres';
+		$model->ciudad_id=2;
+		$model->identificacion=99999999;
+		$model->email='emain@gmail.co';
+		$model->estado=1;
+		$model->genero='H';
+		$model->save();
+                
+                */
+                
+                //----------------------------------
+		
+                
+                
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
+                /*
+                if(isset($_POST['ajax']) && $_POST['ajax']==='usuarios-form')
+		{
+                    echo CActiveForm::validate($model);
+                    Yii::app()->end();
+		}
+                 
+                */
 
 		if(isset($_POST['Usuarios']))
 		{
 			$model->attributes=$_POST['Usuarios'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+                        /*
+                        $model->attributes=array(
+                        'nombre'=>'Otra forma de ingresar nombres',
+                        'ciudad_id'=>2,
+                        'identificacion'=>999,
+                        'email'=>'emain@gmail.com',
+                        'estado'=>1,
+                        'genero'=>'H',
+                        );
+                        if($model->validate())
+                            echo 'Todo se valido bien';
+                        else
+                            echo 'Epaa algun dato no esta bien';
+                        */
+                        
+                        
+			if($model->save()) {
+                            $this->redirect(array('view','id'=>$model->id));
+                        }
 		}
 
 		$this->render('create',array(

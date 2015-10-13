@@ -31,8 +31,8 @@ return array(
              * modelos en vez de la que utiliza yii por defecto.
              * La explicacion de esto esta en el video 
              * "18 YII Framework en Español PHP PERSONALIZAR GENERADOR DE CODIGO PARTE 1"
-            */
-            'generatorPaths'=>array('application.modules.gii')
+             */
+            'generatorPaths' => array('application.modules.gii')
         ),
     ),
     // application components
@@ -55,9 +55,17 @@ return array(
         // database settings are configured in database.php
         'db' => require(dirname(__FILE__) . '/database.php'),
         
-        'messages' => array(
-            'onMissingTranslation'=>array('GMensajes','getNecesitoTraduccion')
+        //la siguiente linea es para que reconosca la mensajes de error pero no 
+        //el que viene por defecto en yii, sino los que estan en la carpeta protected
+        //estas lines fueron del video "16 YII Framework en Español PHP TRADUCCION APLICACIÓN"
+        'coreMessages' => array(
+            'basePath' => 'protected/messages'
         ),
+        
+        ##la siguiente linea ejecuta la clase que se creo para enviar un mensaje en caso de un error
+//        'messages' => array(
+//            'onMissingTranslation' => array('GMensajes', 'getNecesitoTraduccion')
+//        ),
         
         'errorHandler' => array(
             // use 'site/error' action to display errors
@@ -70,12 +78,12 @@ return array(
                     'class' => 'CFileLogRoute',
                     'levels' => 'error, warning',
                 ),
-            // uncomment the following to show log messages on web pages
-            /*
-              array(
-              'class'=>'CWebLogRoute',
-              ),
-             */
+
+                // uncomment the following to show log messages on web pages
+                array(
+                'class'=>'CWebLogRoute',
+                ),
+             
             ),
         ),
     ),

@@ -19,7 +19,7 @@
  * @property Ciudad $ciudad
  */
 class Usuarios extends CActiveRecord {
-    
+
     public $mi_campo;
     public $nombre;
     public $actualizar_estado;
@@ -39,13 +39,68 @@ class Usuarios extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
+            //codigo de reglas generado por yii
+//            array('ciudad_id, estado, identificacion', 'numerical', 'integerOnly' => true),
+//            array('nombre, email', 'length', 'max' => 100),
+//            array('genero', 'length', 'max' => 1),
+//            // The following rule is used by search().
+//            // @todo Please remove those attributes that should not be searched.
+//            array('id, ciudad_id, nombre, email, estado, identificacion, genero', 'safe', 'on' => 'search'),
+            
+            //codigo de reglas del curso
+            //array('campo1, campo2, campo3', 'regla de validacion','on'=>'scenario','message'=>'escribo el mensaje de error {attribute} '),
+            //array('username, password', 'required'),
+            //array('ciudad_id, nombre, identificacion, email, genero', 'required', 'message' => 'Hermano esto : {attribute} debes ingresarlo .'),
+            
+            ##validacion con "escenarios"
+            ##para hacer la prueba hay que inicializar el metodo en controlador asi: 
+            #$model=new Usuarios('firme'); ò $model=new Usuarios('estupido'); ò $model->scenario = 'firme';
+            array('ciudad_id, nombre, identificacion, email, genero', 'required', 'on' => 'firme', 'message' => 'Hola esta es la validacion para {attribute} en el escenario firme'),
+            array('nombre', 'required', 'on' => 'estupido', 'message' => 'Hola esta es la validacion para {attribute} en el escenario estupido'),
+            
+            array('estado', 'safe'),
+            array('ciudad_id, nombre, email', 'length', 'max' => 100),
             array('ciudad_id, estado, identificacion', 'numerical', 'integerOnly' => true),
-            array('nombre, email', 'length', 'max' => 100),
+            //array('identificacion', 'length', 'max' => 10, 'min' => 7),
+            
+            ##para que la propiedad "unique" funcione correctamente es necesario que las siguientes propiedades en el form esten asi
+            //'enableAjaxValidation'=>true, 'enableClientValidation'=>false,
+            //array('identificacion','unique','attributeName'=>'identificacion','className'=>'Usuarios','allowEmpty'=>false),
+            
+            ##tambien se puede comprobar informacion de otra tabla, para probar el siguiente ejemplo
+            ##es necesario que ponga en el campo "identificacion", el nombre de una empresa ya ingresada
+            //array('identificacion','unique','attributeName'=>'empresa','className'=>'Experiencia','allowEmpty'=>false),
+            
+            ##la propieded "exist" funciona de forma contraria que "unique" osea, tiene que existir el valor en la BD para que lo deje pasar
+            //array('identificacion','exist','attributeName'=>'identificacion','className'=>'Usuarios','allowEmpty'=>false),
+            
+            ##el atributo "compare" es muy bueno para cuando se necesita que dos 
+            ##campos esten escritos de la misma forma, como por ejemplo campos contraseña
+            //array('identificacion','compare','compareAttribute'=>'nombre','allowEmpty'=>false),
+            ##tambien se puede utilizar con valores estaticos
+//            array('identificacion','compare','compareValue'=>'111','allowEmpty'=>false),
+            
+            ////array('identificacion','match','pattern'=>'Mi exprecion regular','allowEmpty'=>false),
+            
+            ##funcion de validacione personalizadas
+            //array('identificacion', 'miValidacion'),
+            array('email', 'length', 'max' => 255),
+            array('email', 'email'),
             array('genero', 'length', 'max' => 1),
             // The following rule is used by search().
-            // @todo Please remove those attributes that should not be searched.
+            // Please remove those attributes that should not be searched.
             array('id, ciudad_id, nombre, email, estado, identificacion, genero', 'safe', 'on' => 'search'),
         );
+    }
+    
+    //para que la funcion de validacione personalizadas pueda funcionar correctamente
+    //es necesario, que las propiedades del formulario en la vista este de la sigiente forma.
+    //'enableAjaxValidation'=>true, 'enableClientValidation'=>false,
+    //y ademas en la "action" del controller hay que descomentar la linea "$this->performAjaxValidation($model);"
+    public function miValidacion($attribute,$params)
+    {
+        if($this->genero=='H' && $this->identificacion == '123')
+            $this->addError('identificacion','Eeeeepa el campo identificacion no puede ser 123 para los hombres.');
     }
 
     /**
