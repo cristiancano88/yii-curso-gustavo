@@ -14,8 +14,13 @@
  * The followings are the available model relations:
  * @property Usuarios $usuario
  */
-class Experiencia extends CActiveRecord
+class Experiencia extends GActiveRecord
 {
+    public $ip;
+    public $creado;
+    public $actualizado;
+    public $usuario;
+    
 	/**
 	 * @return string the associated database table name
 	 */

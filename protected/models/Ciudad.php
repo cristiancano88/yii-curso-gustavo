@@ -10,7 +10,7 @@
  * The followings are the available model relations:
  * @property Usuarios[] $usuarioses
  */
-class Ciudad extends CActiveRecord
+class Ciudad extends GActiveRecord
 {
 	/**
 	 * @return string the associated database table name

@@ -1592,3 +1592,252 @@ Stack trace:
 #9 {main}
 REQUEST_URI=/yii-curso-gustavo/consultas/index.html
 ---
+2015/10/14 05:25:25 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FRM usuario WHERE estadp = 1' at line 1. La sentencia SQL ejecutada fue: SELECT * FRM usuario WHERE estadp = 1.
+2015/10/14 05:25:25 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FRM usuario WHERE estadp = 1' at line 1. The SQL statement executed was: SELECT * FRM usuario WHERE estadp = 1' in C:\xampp\htdocs\yii\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii-curso-gustavo\protected\controllers\ConsultasController.php(106): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(49): ConsultasController->actionIndex()
+#3 C:\xampp\htdocs\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('consultas')
+#8 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/yii-curso-gustavo/consultas
+---
+2015/10/14 05:25:42 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yii-curso-gustavo.usuario' doesn't exist. La sentencia SQL ejecutada fue: SELECT * FROM usuario WHERE estadp = 1.
+2015/10/14 05:25:42 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yii-curso-gustavo.usuario' doesn't exist. The SQL statement executed was: SELECT * FROM usuario WHERE estadp = 1' in C:\xampp\htdocs\yii\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii-curso-gustavo\protected\controllers\ConsultasController.php(106): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(49): ConsultasController->actionIndex()
+#3 C:\xampp\htdocs\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('consultas')
+#8 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/yii-curso-gustavo/consultas
+---
+2015/10/14 05:26:02 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'estadp' in 'where clause'. La sentencia SQL ejecutada fue: SELECT * FROM usuarios WHERE estadp = 1.
+2015/10/14 05:26:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'estadp' in 'where clause'. The SQL statement executed was: SELECT * FROM usuarios WHERE estadp = 1' in C:\xampp\htdocs\yii\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii-curso-gustavo\protected\controllers\ConsultasController.php(106): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(49): ConsultasController->actionIndex()
+#3 C:\xampp\htdocs\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('consultas')
+#8 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/yii-curso-gustavo/consultas
+---
+2015/10/14 05:26:11 [error] [php] Undefined variable: sqlUsuario (C:\xampp\htdocs\yii-curso-gustavo\protected\controllers\ConsultasController.php:114)
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CController.php(286): ConsultasController->runAction()
+#1 C:\xampp\htdocs\yii\web\CController.php(265): ConsultasController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\web\CWebApplication.php(282): ConsultasController->run()
+#3 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii-curso-gustavo/consultas
+2015/10/14 05:26:23 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\yii-curso-gustavo\protected\views\consultas\index.php:101)
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CController.php(869): ConsultasController->renderFile()
+#1 C:\xampp\htdocs\yii\web\CController.php(782): ConsultasController->renderPartial()
+#2 C:\xampp\htdocs\yii-curso-gustavo\protected\controllers\ConsultasController.php(115): ConsultasController->render()
+#3 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(49): ConsultasController->actionIndex()
+#4 C:\xampp\htdocs\yii\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\web\CController.php(286): ConsultasController->runAction()
+#6 C:\xampp\htdocs\yii\web\CController.php(265): ConsultasController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(282): ConsultasController->run()
+#8 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii-curso-gustavo/consultas
+2015/10/14 05:26:49 [error] [php] Undefined variable: sqlUsuario (C:\xampp\htdocs\yii-curso-gustavo\protected\views\consultas\index.php:108)
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CController.php(869): ConsultasController->renderFile()
+#1 C:\xampp\htdocs\yii\web\CController.php(782): ConsultasController->renderPartial()
+#2 C:\xampp\htdocs\yii-curso-gustavo\protected\controllers\ConsultasController.php(115): ConsultasController->render()
+#3 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(49): ConsultasController->actionIndex()
+#4 C:\xampp\htdocs\yii\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\web\CController.php(286): ConsultasController->runAction()
+#6 C:\xampp\htdocs\yii\web\CController.php(265): ConsultasController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(282): ConsultasController->run()
+#8 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii-curso-gustavo/consultas
+2015/10/14 05:31:43 [error] [php] Undefined variable: sqlUsuario (C:\xampp\htdocs\yii-curso-gustavo\protected\controllers\ConsultasController.php:116)
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CController.php(286): ConsultasController->runAction()
+#1 C:\xampp\htdocs\yii\web\CController.php(265): ConsultasController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\web\CWebApplication.php(282): ConsultasController->run()
+#3 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii-curso-gustavo/consultas
+2015/10/14 05:32:15 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\yii-curso-gustavo\protected\views\consultas\index.php:129)
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CController.php(869): ConsultasController->renderFile()
+#1 C:\xampp\htdocs\yii\web\CController.php(782): ConsultasController->renderPartial()
+#2 C:\xampp\htdocs\yii-curso-gustavo\protected\controllers\ConsultasController.php(117): ConsultasController->render()
+#3 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(49): ConsultasController->actionIndex()
+#4 C:\xampp\htdocs\yii\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\web\CController.php(286): ConsultasController->runAction()
+#6 C:\xampp\htdocs\yii\web\CController.php(265): ConsultasController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(282): ConsultasController->run()
+#8 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii-curso-gustavo/consultas
+2015/10/14 05:54:51 [error] [exception.CException] exception 'CException' with message 'El alias "ext.campos.GCamposBehavior" es inválido. Asegúrese de que apunta a un archivo PHP existente y que el archivo tiene permisos de lectura.' in C:\xampp\htdocs\yii\YiiBase.php:323
+Stack trace:
+#0 C:\xampp\htdocs\yii\YiiBase.php(196): YiiBase::import('ext.campos.GCam...', true)
+#1 C:\xampp\htdocs\yii\base\CComponent.php(329): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\yii\base\CComponent.php(298): CComponent->attachBehavior('GCamposBehavior', Array)
+#3 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(396): CComponent->attachBehaviors(Array)
+#4 C:\xampp\htdocs\yii-curso-gustavo\protected\models\Tasks.php(18): CActiveRecord::model('Tasks')
+#5 C:\xampp\htdocs\yii-curso-gustavo\protected\controllers\UsuariosController.php(184): Tasks::model()
+#6 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(49): UsuariosController->actionIndex()
+#7 C:\xampp\htdocs\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\yii\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\yii\web\CWebApplication.php(282): CController->run('index')
+#16 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('usuarios/index')
+#17 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/yii-curso-gustavo/usuarios/index.html
+HTTP_REFERER=http://localhost/yii-curso-gustavo/consultas
+---
+2015/10/14 05:58:35 [error] [exception.CException] exception 'CException' with message 'El alias "ext.campos.GCamposBehavior" es inválido. Asegúrese de que apunta a un archivo PHP existente y que el archivo tiene permisos de lectura.' in C:\xampp\htdocs\yii\YiiBase.php:323
+Stack trace:
+#0 C:\xampp\htdocs\yii\YiiBase.php(196): YiiBase::import('ext.campos.GCam...', true)
+#1 C:\xampp\htdocs\yii\base\CComponent.php(329): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\yii\base\CComponent.php(298): CComponent->attachBehavior('GCamposBehavior', Array)
+#3 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(396): CComponent->attachBehaviors(Array)
+#4 C:\xampp\htdocs\yii-curso-gustavo\protected\models\Tasks.php(18): CActiveRecord::model('Tasks')
+#5 C:\xampp\htdocs\yii-curso-gustavo\protected\controllers\UsuariosController.php(184): Tasks::model()
+#6 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(49): UsuariosController->actionIndex()
+#7 C:\xampp\htdocs\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\yii\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\yii\web\CWebApplication.php(282): CController->run('index')
+#16 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('usuarios/index')
+#17 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/yii-curso-gustavo/usuarios/index.html
+HTTP_REFERER=http://localhost/yii-curso-gustavo/consultas
+---
+2015/10/14 06:03:14 [error] [exception.CException] exception 'CException' with message 'El alias "ext.campos.GCamposBehavior" es inválido. Asegúrese de que apunta a un archivo PHP existente y que el archivo tiene permisos de lectura.' in C:\xampp\htdocs\yii\YiiBase.php:323
+Stack trace:
+#0 C:\xampp\htdocs\yii\YiiBase.php(196): YiiBase::import('ext.campos.GCam...', true)
+#1 C:\xampp\htdocs\yii\base\CComponent.php(329): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\yii\base\CComponent.php(298): CComponent->attachBehavior('GCamposBehavior', Array)
+#3 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(396): CComponent->attachBehaviors(Array)
+#4 C:\xampp\htdocs\yii-curso-gustavo\protected\models\Tasks.php(18): CActiveRecord::model('Tasks')
+#5 C:\xampp\htdocs\yii-curso-gustavo\protected\controllers\UsuariosController.php(184): Tasks::model()
+#6 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(49): UsuariosController->actionIndex()
+#7 C:\xampp\htdocs\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\yii\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\yii\web\CWebApplication.php(282): CController->run('index')
+#16 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('usuarios/index')
+#17 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/yii-curso-gustavo/usuarios/index.html
+HTTP_REFERER=http://localhost/yii-curso-gustavo/consultas
+---
+2015/10/14 06:03:16 [error] [exception.CException] exception 'CException' with message 'El alias "ext.campos.GCamposBehavior" es inválido. Asegúrese de que apunta a un archivo PHP existente y que el archivo tiene permisos de lectura.' in C:\xampp\htdocs\yii\YiiBase.php:323
+Stack trace:
+#0 C:\xampp\htdocs\yii\YiiBase.php(196): YiiBase::import('ext.campos.GCam...', true)
+#1 C:\xampp\htdocs\yii\base\CComponent.php(329): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\yii\base\CComponent.php(298): CComponent->attachBehavior('GCamposBehavior', Array)
+#3 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(396): CComponent->attachBehaviors(Array)
+#4 C:\xampp\htdocs\yii-curso-gustavo\protected\models\Tasks.php(18): CActiveRecord::model('Tasks')
+#5 C:\xampp\htdocs\yii-curso-gustavo\protected\controllers\UsuariosController.php(184): Tasks::model()
+#6 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(49): UsuariosController->actionIndex()
+#7 C:\xampp\htdocs\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\yii\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\yii\web\CWebApplication.php(282): CController->run('index')
+#16 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('usuarios/index')
+#17 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/yii-curso-gustavo/usuarios/index.html
+HTTP_REFERER=http://localhost/yii-curso-gustavo/consultas
+---
+2015/10/14 12:58:34 [error] [php] Undefined variable: tareas (C:\xampp\htdocs\yii-curso-gustavo\protected\controllers\UsuariosController.php:190)
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(133): UsuariosController->runAction()
+#1 C:\xampp\htdocs\yii\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(58): UsuariosController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\web\CController.php(265): UsuariosController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(282): UsuariosController->run()
+#8 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii-curso-gustavo/usuarios/index.html
+2015/10/14 13:20:09 [error] [exception.CException] exception 'CException' with message 'La propiedad "Experiencia"."creado" no se encuentra definida.' in C:\xampp\htdocs\yii\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(161): CComponent->__set('creado', '2015-10-14 13:2...')
+#1 C:\xampp\htdocs\yii-curso-gustavo\protected\extensions\campos\GCamposBehavior.php(18): CActiveRecord->__set('creado', '2015-10-14 13:2...')
+#2 C:\xampp\htdocs\yii\base\CComponent.php(561): GCamposBehavior->beforeSave(Object(CModelEvent))
+#3 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(843): CComponent->raiseEvent('onBeforeSave', Object(CModelEvent))
+#4 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(945): CActiveRecord->onBeforeSave(Object(CModelEvent))
+#5 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(1074): CActiveRecord->beforeSave()
+#6 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#7 C:\xampp\htdocs\yii-curso-gustavo\protected\controllers\ExperienciaController.php(73): CActiveRecord->save()
+#8 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(49): ExperienciaController->actionCreate()
+#9 C:\xampp\htdocs\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\yii\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii\web\CWebApplication.php(282): CController->run('create')
+#18 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('experiencia/cre...')
+#19 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/yii-curso-gustavo/experiencia/create.html
+HTTP_REFERER=http://localhost/yii-curso-gustavo/experiencia/create.html
+---

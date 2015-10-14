@@ -54,6 +54,17 @@ return array(
         ),
         // database settings are configured in database.php
         'db' => require(dirname(__FILE__) . '/database.php'),
+        'db1' => array(
+            // uncomment the following lines to use a MySQL database
+            'class' => 'CDbConnection',
+            'connectionString' => 'mysql:host=localhost;dbname=yii-curso-gustavo2',
+            'emulatePrepare' => true,
+            'username' => 'root',
+            'password' => '',
+            'charset' => 'utf8',
+            'enableProfiling'=>true,
+
+        ),
         
         //la siguiente linea es para que reconosca la mensajes de error pero no 
         //el que viene por defecto en yii, sino los que estan en la carpeta protected

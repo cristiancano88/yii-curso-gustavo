@@ -7,7 +7,7 @@
  * @property integer $id
  * @property string $nombre
  */
-class Categorias extends CActiveRecord
+class Categorias extends GActiveRecord
 {
 	/**
 	 * @return string the associated database table name

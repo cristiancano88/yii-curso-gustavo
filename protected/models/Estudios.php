@@ -13,7 +13,7 @@
  * The followings are the available model relations:
  * @property Usuarios $usuario
  */
-class Estudios extends CActiveRecord
+class Estudios extends GActiveRecord
 {
 	/**
 	 * @return string the associated database table name

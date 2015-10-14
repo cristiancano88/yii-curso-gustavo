@@ -73,3 +73,61 @@
     <?php } ?>
 </table>
 <?php } else { echo 'Registros no encontrados en la BD.'; } ?>
+
+<!--/////////////////SQL Nativo///////////////////////-->
+
+<?php if( $sqlUsuarios ) { ?>
+<table>
+    <tr>
+        <th colspan="4">Ejemplo de consultas de varios registros con "Create command"</th>
+    </tr>
+    <tr>
+        <th>id</th>
+        <th>Nombre</th>
+        <th>Identificacion</th>
+        <th>email</th>
+        <th>ciudad</th>
+    </tr>
+    <?php
+        //Este forech funciona de esta manera solo cuando la variable es inicializada asi: "$usuariosCrit = new CActiveDataProvider"
+        //foreach( $usuariosCrit->getData() as $usua ) { 
+    ?>
+    <?php foreach( $sqlUsuarios as $usuaSQL ) { ?>
+    <tr>
+        <td><?php echo $usuaSQL['id']; ?></td>
+        <td><?php echo $usuaSQL['nombre']; ?></td>
+        <td><?php echo $usuaSQL['identificacion']; ?></td>
+        <td><?php echo $usuaSQL['email']; ?></td>
+        <td><?php // echo $usuaSQL->ciudad->nombre; //esta se utilizo cuando se trabajo con WITH ?></td>
+        <td><?php // echo $usua->nombre; //esta se utilizo cuando se trabajo con JOIN ?></td>
+    </tr>
+    <?php } ?>
+</table>
+<?php } else { echo 'Registros no encontrados en la BD.'; } ?>
+
+<?php if( $sqlUsuario ) { ?>
+<table>
+    <tr>
+        <th colspan="4">Ejemplo de consulta de un registro con "Create command"</th>
+    </tr>
+    <tr>
+        <th>id</th>
+        <th>Nombre</th>
+        <th>Identificacion</th>
+        <th>email</th>
+        <th>ciudad</th>
+    </tr>
+    <?php
+        //Este forech funciona de esta manera solo cuando la variable es inicializada asi: "$usuariosCrit = new CActiveDataProvider"
+        //foreach( $usuariosCrit->getData() as $usua ) { 
+    ?>
+    <tr>
+        <td><?php echo $sqlUsuario['id']; ?></td>
+        <td><?php echo $sqlUsuario['nombre']; ?></td>
+        <td><?php echo $sqlUsuario['identificacion']; ?></td>
+        <td><?php echo $sqlUsuario['email']; ?></td>
+        <td><?php // echo $sqlUsuario->ciudad->nombre; //esta se utilizo cuando se trabajo con WITH ?></td>
+        <td><?php // echo $usua->nombre; //esta se utilizo cuando se trabajo con JOIN ?></td>
+    </tr>
+</table>
+<?php } else { echo 'Registros no encontrados en la BD.'; } ?>

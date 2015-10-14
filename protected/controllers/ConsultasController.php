@@ -100,12 +100,20 @@ class ConsultasController extends Controller {
         //buscar la primera fila que arroje el sql ingresado, siempre va traer un registro
 //        $sql = "SELECT * FROM usuarios WHERE genero = 'M' ";
 //        $usuariosCrit = Usuarios::model()->findAllBySql($sql);
+        
+        //--------------SQL Nativo----------------------
+        $sql = "SELECT * FROM usuarios WHERE estado = 1";
+        $sqlUsuarios = yii::app()->db->createCommand($sql)->queryAll();
+        
+        $sqlUsuario = yii::app()->db->createCommand($sql)->queryRow();
 
         $this->render('index', 
                 array(
                     'usuario' => $usuario,
                     'usuarios' => $usuarios, 
                     'usuariosCrit' => $usuariosCrit, 
+                    'sqlUsuarios' => $sqlUsuarios, 
+                    'sqlUsuario' => $sqlUsuario, 
                 ));
     }
 

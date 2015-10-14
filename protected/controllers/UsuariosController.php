@@ -180,7 +180,15 @@ class UsuariosController extends Controller
 	 * Lists all models.
 	 */
 	public function actionIndex()
-	{
+	{   
+            //esta linea es para probar la segunda bd (yii-curso-gustavo2) -- 32 Yii Framework en Espanol PHP USAR VARIAS CONEXIONES BASES DE DATOS
+            #$tareas=Tasks::model()->findAll();
+            #echo '<pre>';
+            #var_dump($tareas);
+            #exit();
+            
+            //----------
+            
 		$dataProvider=new CActiveDataProvider('Usuarios');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,

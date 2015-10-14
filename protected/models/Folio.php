@@ -15,7 +15,7 @@
  * The followings are the available model relations:
  * @property Usuarios $usuario
  */
-class Folio extends CActiveRecord
+class Folio extends GActiveRecord
 {
 	/**
 	 * @return string the associated database table name
