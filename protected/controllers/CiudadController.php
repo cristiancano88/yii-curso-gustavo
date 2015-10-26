@@ -94,9 +94,18 @@ class CiudadController extends Controller
 		if(isset($_POST['Ciudad']))
 		{
 			$model->attributes=$_POST['Ciudad'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()) {
+                            Yii::app()->user->setFlash('success','Todo bien men!! je je.');
+                            $this->redirect(array('view','id'=>$model->id));
+                        }
+                        Yii::app()->user->setFlash('error','Todo mal men NOOOOOOOOOOO!.');
 		}
+                
+                Yii::app()->user->setFlash('error','Todo mal men NOOOOOOOOOOO!.');
+		Yii::app()->user->setFlash('success','Todo bien eeeeeee.');
+		Yii::app()->user->setFlash('notice','Ejemplo de noticeeeeeeeeeeeee.');
+		Yii::app()->user->setFlash('info','Ejemplo de noticeeeeeeeeeeeee.');
+		Yii::app()->user->setFlash('alert','Ejemplo de noticeeeeeeeeeeeee.');
 
 		$this->render('update',array(
 			'model'=>$model,
