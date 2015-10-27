@@ -10,6 +10,7 @@ return array(
     'language' => 'es',
     'sourceLanguage' => 'en',
     'charset' => 'utf-8',
+    'theme'=>'negro',
     //'defaultController'=>'controlador/admin', // Vista por defecto 
     // preloading 'log' component
     'preload' => array('log'),
@@ -41,6 +42,40 @@ return array(
             // enable cookie-based authentication
             'allowAutoLogin' => true,
         ),
+        'widgetFactory' => array(
+            'widgets' => array(
+                'CGridView' => array(
+                    'cssFile' =>false,
+                    'pager' =>array('cssFile' =>false),
+                    'pagerCssClass' =>'pagination',
+                    'rowCssClass'=>array('light','dark'),
+                    'itemsCssClass'=>'table table-bordered table-condensed table-striped',
+                ),
+                'CListView' =>array(
+                    'cssFile' =>false,
+                    'pager' =>array('cssFile' =>false),
+                    'pagerCssClass' =>'pagination',
+
+                ),
+                'CDetailView' =>array(
+                    'cssFile' =>false,
+                    'htmlOptions'=>array('class'=>'table table-bordered table-condensed table-striped'),
+                ),
+                /*
+                'CLinkPager' =>array(
+                ),
+                */
+            )
+        ),
+        'authManager'=>array(
+            'class'=>'CDbAuthManager',
+            'connectionID'=>'db',
+            'itemTable'=>'auth_items',
+            'itemChildTable'=>'auth_relacion',
+            'assignmentTable'=>'auth_asignacion',
+        ),
+        
+        
         // uncomment the following to enable URLs in path-format
         'urlManager' => array(
             'urlFormat' => 'path',

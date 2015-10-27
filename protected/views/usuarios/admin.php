@@ -120,7 +120,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
             'class' => 'CButtonColumn',
             'header' => 'Modificar',
             'viewButtonUrl' => 'Yii::app()->controller->createUrl("view",array("id"=>$data->id))',
-            'updateButtonUrl' => 'Yii::app()->createUrl("elaboracion/orden",array("id"=>$data->id))',
+            'updateButtonUrl' => 'Yii::app()->controller->createUrl("update",array("id"=>$data->id))',
             'deleteButtonUrl' => 'Yii::app()->controller->createUrl("delete",array("id"=>$data->id))',
             'deleteConfirmation' => 'Esta seguro que desea borrar el registro seleccionado?',
             'viewButtonImageUrl' => Yii::app()->request->baseUrl . '/images/021.png',

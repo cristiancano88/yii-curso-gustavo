@@ -1870,3 +1870,114 @@ Stack trace:
 REQUEST_URI=/yii-curso-gustavo/ciudad/update/1.html
 HTTP_REFERER=http://localhost/yii-curso-gustavo/ciudad/update/1.html
 ---
+2015/10/27 04:24:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "elaboracion/orden"' in C:\xampp\htdocs\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('elaboracion/ord...')
+#1 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii-curso-gustavo/elaboracion/orden/1.html
+HTTP_REFERER=http://localhost/yii-curso-gustavo/usuarios/admin.html
+---
+2015/10/27 04:24:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "elaboracion/orden"' in C:\xampp\htdocs\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('elaboracion/ord...')
+#1 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii-curso-gustavo/elaboracion/orden/1.html
+HTTP_REFERER=http://localhost/yii-curso-gustavo/usuarios/admin.html
+---
+2015/10/27 04:26:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "elaboracion/orden"' in C:\xampp\htdocs\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('elaboracion/ord...')
+#1 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii-curso-gustavo/elaboracion/orden/1.html
+HTTP_REFERER=http://localhost/yii-curso-gustavo/usuarios/admin.html
+---
+2015/10/27 04:26:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "elaboracion/view"' in C:\xampp\htdocs\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('elaboracion/vie...')
+#1 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii-curso-gustavo/elaboracion/view/1.html
+---
+2015/10/27 04:27:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "elaboracion/orden"' in C:\xampp\htdocs\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('elaboracion/ord...')
+#1 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii-curso-gustavo/elaboracion/orden/1.html
+HTTP_REFERER=http://localhost/yii-curso-gustavo/usuarios/admin.html
+---
+2015/10/27 04:27:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "elaboracion/view"' in C:\xampp\htdocs\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('elaboracion/vie...')
+#1 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii-curso-gustavo/elaboracion/view/1.html
+---
+2015/10/27 04:27:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "elaboracion/view"' in C:\xampp\htdocs\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('elaboracion/vie...')
+#1 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii-curso-gustavo/elaboracion/view/1
+---
+2015/10/27 04:28:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "elaboracion/view"' in C:\xampp\htdocs\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('elaboracion/vie...')
+#1 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii-curso-gustavo/elaboracion/1
+---
+2015/10/27 04:28:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "elaboracion/view"' in C:\xampp\htdocs\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('elaboracion/vie...')
+#1 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii-curso-gustavo/elaboracion/1.html
+---
+2015/10/27 04:40:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "elaboracion/orden"' in C:\xampp\htdocs\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('elaboracion/ord...')
+#1 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii-curso-gustavo/elaboracion/orden/1.html
+HTTP_REFERER=http://localhost/yii-curso-gustavo/usuarios/admin.html
+---
+2015/10/27 04:40:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "elaboracion/orden"' in C:\xampp\htdocs\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('elaboracion/ord...')
+#1 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii-curso-gustavo/elaboracion/orden/1.html
+HTTP_REFERER=http://localhost/yii-curso-gustavo/usuarios/admin.html
+---
+2015/10/27 04:45:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "elaboracion/update"' in C:\xampp\htdocs\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('elaboracion/upd...')
+#1 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii-curso-gustavo/elaboracion/update/1.html
+---
+2015/10/27 04:47:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "update/id"' in C:\xampp\htdocs\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CWebApplication.php(141): CWebApplication->runController('update/id')
+#1 C:\xampp\htdocs\yii\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii-curso-gustavo\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii-curso-gustavo/update/id/1.html
+HTTP_REFERER=http://localhost/yii-curso-gustavo/usuarios/admin.html
+---
