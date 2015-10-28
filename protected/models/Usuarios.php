@@ -137,6 +137,7 @@ class Usuarios extends GActiveRecord {
             'estado' => 'Estado',
             'identificacion' => 'Identificacion',
             'genero' => 'Genero',
+            'actualizar_estado' => 'Actualizar Estado',
         );
     }
 

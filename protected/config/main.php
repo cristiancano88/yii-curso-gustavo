@@ -10,7 +10,8 @@ return array(
     'language' => 'es',
     'sourceLanguage' => 'en',
     'charset' => 'utf-8',
-    'theme'=>'negro',
+    'theme'=>'photofolio',
+//    'theme'=>'negro',
     //'defaultController'=>'controlador/admin', // Vista por defecto 
     // preloading 'log' component
     'preload' => array('log'),
@@ -47,8 +48,8 @@ return array(
                 'CGridView' => array(
                     'cssFile' =>false,
                     'pager' =>array('cssFile' =>false),
-                    'pagerCssClass' =>'pagination',
-                    'rowCssClass'=>array('light','dark'),
+                    'pagerCssClass' =>'pagination',//clase que va ha tener la paginacion
+                    'rowCssClass'=>array('light','dark'),//clases que van a tener las filas de la grid, "light" para pares y "dark" para impares
                     'itemsCssClass'=>'table table-bordered table-condensed table-striped',
                 ),
                 'CListView' =>array(
@@ -138,5 +139,8 @@ return array(
     'params' => array(
         // this is used in contact page
         'adminEmail' => 'webmaster@example.com',
+        'empresa'=>'Empresa de servicios',
+        'slogan'=>'Administramos sus empleados',
+        'twiter'=>'@gsalgadotoledo',
     ),
 );

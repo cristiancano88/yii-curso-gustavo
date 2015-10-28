@@ -44,6 +44,21 @@ class UsuariosController extends Controller
 			),
 		);
 	}
+        
+        /**Video "43 Yii Framework en Espanol PHP ACCIONES FILTROS Y CONTROLADOR PARTE 1"
+         *Otra forma de crear controladores
+         * 
+         */
+        public function actions()
+	{
+            return array(
+                'estado'=>array( //el nombre de la accion
+                'class'=>'ext.acciones.EstadoAction', //clase que va ha heredar (prottected/extenciones/acciones/EstadoAction.php)
+                'model'=>'Usuarios',
+                'redirect'=>'index',
+                ),
+            );
+	}
 
 	/**
 	 * Displays a particular model.

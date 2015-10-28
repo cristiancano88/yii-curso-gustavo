@@ -8,6 +8,10 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
 	<br />
+        
+        <b><?php echo CHtml::encode($data->getAttributeLabel('actualizar_estado')); ?>:</b>
+	<?php echo CHtml::link($data->estado==1 ? 'Desactivar' : 'Activar', array('estado', 'id'=>$data->id)); ?>
+	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('ciudad_id')); ?>:</b>
 	<?php echo CHtml::encode($data->ciudad->nombre); //para poder hacer esto, esta el metodo "relations()" en el model ?>
