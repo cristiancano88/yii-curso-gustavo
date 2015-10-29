@@ -58,6 +58,7 @@ class Vacantes extends CActiveRecord
 			'id' => 'ID',
 			'nombre' => 'Nombre',
 			'descripcion' => 'Descripcion',
+			'estado' => 'Estado',
 		);
 	}
 

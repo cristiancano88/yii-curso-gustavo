@@ -1,6 +1,6 @@
 <?php
 
-class UsuariosController extends Controller
+class UsuariosController extends GSeguroController
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -11,22 +11,54 @@ class UsuariosController extends Controller
 	/**
 	 * @return array action filters
 	 */
+        
+        public function	filterMyFiltro($filterChain) //esta clase se creo en "\protected\extensions\filtros\MiFiltro.php"
+	{
+		$filterChain->run(); // para que siga otro filtro
+		$this->getId(); //nombre del controlador
+	}
+	
+        //Esta funcion es de YII, es muy parecida a la forma de como se creo el metodo action de "estado", pero para filtros
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
+			'MyFiltro + edit, create', //MyFiltro: filterMyFiltro(creada arriba)
+			array(
+			'ext.filtros.MiFiltro - edit, create',
+			'parametro1'=>'valordemiparametro',
+			)
 		);
 	}
-
+        
+        //codigo por defecto de yii
+//	public function filters()
+//	{
+//		return array(
+//			'accessControl', // perform access control for CRUD operations
+//			'postOnly + delete', // we only allow deletion via POST request
+//		);
+//	}
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
+        /*
+        //LAS REGLAS LAS ESTA HEREDANDO DE LA CLASE CONTROLADOR GLOBAL QUE SE CREO EN ( ../prtected/components/GSeguroController.php ), en el video "44 Yii Framework en Espanol PHP ACCIONES FILTROS Y CONTROLADOR PARTE 2"
 	public function accessRules()
 	{
 		return array(
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('estado'),
+				'users'=>array('*'),
+//				'controllers'=>array('usuarios', 'experiencia'), //se deniegan a permiten accesos a controladores
+                            
+                                'users'=>'?',
+                                'ips'=>'111.222.333', //ip de servidor
+                                'verbs'=>array('GET','POST'), //denegar el acceso a este controlador por estos parametros
+                                'roles'=>array('administrators','rol2'),
+                                'expression'=>'$user->id == 2',
+			),
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
 				'users'=>array('*'),
@@ -43,7 +75,7 @@ class UsuariosController extends Controller
 				'users'=>array('*'),
 			),
 		);
-	}
+	}*/
         
         /**Video "43 Yii Framework en Espanol PHP ACCIONES FILTROS Y CONTROLADOR PARTE 1"
          *Otra forma de crear controladores
@@ -53,9 +85,9 @@ class UsuariosController extends Controller
 	{
             return array(
                 'estado'=>array( //el nombre de la accion
-                'class'=>'ext.acciones.EstadoAction', //clase que va ha heredar (prottected/extenciones/acciones/EstadoAction.php)
-                'model'=>'Usuarios',
-                'redirect'=>'index',
+                    'class'=>'ext.acciones.EstadoAction', //clase que va ha heredar (prottected/extenciones/acciones/EstadoAction.php)
+                    'model'=>'Usuarios',
+                    'redirect'=>'index',
                 ),
             );
 	}

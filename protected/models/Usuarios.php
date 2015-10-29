@@ -18,7 +18,7 @@
  * @property Folio[] $folios
  * @property Ciudad $ciudad
  */
-class Usuarios extends GActiveRecord {
+class Usuarios extends CActiveRecord {
 
     public $mi_campo;
     public $nombre;

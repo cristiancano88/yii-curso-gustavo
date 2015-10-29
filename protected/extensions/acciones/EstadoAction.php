@@ -15,13 +15,13 @@ class EstadoAction extends CAction {
 
 //        $model = Usuarios::model()->findByPk($_GET['id']);
         $model = CActiveRecord::model($this->model)->findByPk($_GET['id']);
+        
         if ($model === null)
             throw new CHttpException(404);
         
         $model->{$this->campo} = $model->{$this->campo} == 1 ? 0 : 1;
-
+        
         if ($model->update()) {
-//            $this->redirect('index');
             $this->controller->redirect(array($this->redirect));
         }
 

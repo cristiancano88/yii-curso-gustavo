@@ -28,7 +28,7 @@ class VacantesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','estado'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -43,6 +43,17 @@ class VacantesController extends Controller
 				'users'=>array('*'),
 			),
 		);
+	}
+        
+        public function actions()
+	{
+            return array(
+                'estado'=>array(
+                    'class'=>'ext.acciones.EstadoAction',
+                    'model'=>'Vacantes',
+                    'redirect'=>'index',
+                ),
+            );
 	}
 
 	/**
