@@ -13,9 +13,29 @@
                     <h1><a href="index.html"><?php echo CHtml::encode(Yii::app()->name); ?></a></h1>
                     <p><?php echo Yii::app()->params['slogan']; ?></p>
                 </div>
-                <div class="fl_right"><a href="#"><?php echo CHtml::image(Yii::app()->theme->baseUrl . "/images/demo/logo.png", "468x60"); ?></a></div>
-                <!--<div class="fl_right"><a href="#"><?php echo CHtml::image(Yii::app()->theme->baseUrl . "/images/demo/468x60.gif", "468x60"); ?></a></div>-->
+                <div style="text-align:right">
+                    <?php
+                    $color = array('style' => 'color:#fff');
+//                    echo CHtml::link('Spanish', $this->createUrl('',array('lg'=>'es')),$color) .' | '
+//                        . CHtml::link('English', $this->createUrl('',array('lg'=>'en')),$color);
+
+                    echo CHtml::link('Ver en español', $this->createMultilanguageReturnUrl('es'), $color) . ' | '
+                    . CHtml::link('Ver en ingles', $this->createMultilanguageReturnUrl('en'), $color);
+                    ?>    
+                    <?php
+//                    $this->widget('ext.components.language.XLangMenu', array(
+//                            'encodeLabel'=>false,
+//                            'hideActive'=>false,
+//                            'items'=>array(
+//                                    'es'=>CHtml::image(Yii::app()->request->baseUrl.'/images/es.gif').' Spanish',
+//                                    'en'=>CHtml::image(Yii::app()->request->baseUrl.'/images/en.png').' In English'
+//                            ),
+//                    ));
+                    ?>
             </div>
+
+                <div class="fl_right"><a href="#"><?php echo CHtml::image(Yii::app()->theme->baseUrl . "/images/demo/logo.png"); ?></a></div>
+        </div>
         </div>
         <!-- ####################################################################################################### -->
         <div class="wrapper col1">
@@ -142,3 +162,10 @@
         </div>
     </body>
 </html>
+
+<?php
+// Efecto para el div de Mensajes Flash
+Yii::app()->clientScript->registerScript(
+        'myHideEffect', '$(".info").animate({opacity: 1.0}, 1000000).slideUp("slow");', CClientScript::POS_READY
+);
+?>

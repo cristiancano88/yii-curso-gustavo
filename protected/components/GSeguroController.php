@@ -19,18 +19,18 @@ class GSeguroController extends Controller {
     public function accessRules() {
         return array(
             /*
-              array('deny',  // allow all users to perform 'index' and 'view' actions
+            array('deny',  // allow all users to perform 'index' and 'view' actions
+//            array('allow',  // allow all users to perform 'index' and 'view' actions
 
-              #'actions'=>array('estado'),
-              #'controllers'=>array('usuarios','experiencia'),
-              #'users'=>array('?'),
-              #'ips'=>array('111.222.333'), //ip de servidor
-              #'roles'=>array('rol_edicion'),
-              #'verbs'=>array('GET','POST'), //denegar el acceso a este controlador por estos parametros
-              #'expression'=>$this->getNombres(), //hace referencia a la funcion declarada abajo
-              ),
-             */
-
+            #'actions'=>array('estado'),
+            #'controllers'=>array('usuarios','experiencia'),
+            #'users'=>array('?'),
+            #'ips'=>array('111.222.333'), //ip de servidor
+            'roles'=>array('rol_edicion'),
+            #'verbs'=>array('GET','POST'), //denegar el acceso a este controlador por estos parametros
+            #'expression'=>$this->getNombres(), //hace referencia a la funcion declarada abajo
+            ),
+            */
 
             array('allow', // allow all users to perform 'index' and 'view' actions
                 'users' => array('@'),

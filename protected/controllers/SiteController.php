@@ -27,6 +27,9 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
+            $variable = CHtml::link("Mi link", array('usuarios/index','id'=>'2','title'=>'mi titulo'), array('style'=>'color:#fff'));
+            echo $variable;
+            
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$this->render('index');

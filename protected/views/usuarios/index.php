@@ -12,11 +12,25 @@ $this->menu = array(
 );
 ?>
 
+
+<?php
+//codigo colocado en el video (48 Yii Framework en Espanol PHP AUTENTICACION, AUTORIZACION Y CONTOL DE ACCESO 2)
+//esto para extraer informacion del usuario logueado
+echo '<strong>Informacion del usuario logueado</strong> <br>';
+echo 'id del usuario logueado: '. Yii::app()->user->id.'<br>';
+echo 'username del usuario logueado: '. Yii::app()->user->name.'<br>';
+echo 'nombre del usuario logueado: '. Yii::app()->user->getState('nombre').'<br>';
+echo 'identificacion del usuario logueado: '. Yii::app()->user->getState('identificacion').'<br><br>';
+//fin codigo colocado en el video (48 Yii Framework en Espanol PHP AUTENTICACION, AUTORIZACION Y CONTOL DE ACCESO 2)
+?>
+
+
 <?php
 $var = 10;
+echo '<strong>Ejemplo de palabras traducidas</strong> <br>';
 echo Yii::t('app', "Save # {VAR}", array('{VAR}' => $var)) .'<br>';
 echo Yii::t('app', "Name") .'<br>';
-echo Yii::t('app', "Save") .'<br>';
+echo Yii::t('app', "Save") .'<br><br>';
 ?>
 <h1>Usuarioses</h1>
 

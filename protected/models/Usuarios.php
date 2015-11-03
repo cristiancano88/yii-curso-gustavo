@@ -49,7 +49,7 @@ class Usuarios extends CActiveRecord {
             
             //codigo de reglas del curso
             //array('campo1, campo2, campo3', 'regla de validacion','on'=>'scenario','message'=>'escribo el mensaje de error {attribute} '),
-            //array('username, password', 'required'),
+            array('username, password', 'required'),
             //array('ciudad_id, nombre, identificacion, email, genero', 'required', 'message' => 'Hermano esto : {attribute} debes ingresarlo .'),
             
             ##validacion con "escenarios"
@@ -139,6 +139,37 @@ class Usuarios extends CActiveRecord {
             'genero' => 'Genero',
             'actualizar_estado' => 'Actualizar Estado',
         );
+    }
+    
+    /**
+     * Checks if the given password is correct.
+     * @param string the password to be validated
+     * @return boolean whether the password is valid
+     */
+    public function validatePassword($password)
+    {
+        return $this->hashPassword( $password, $this->session ) == $this->password;
+    }
+    
+    /**
+     * Generates the password hash.
+     * @param string password
+     * @param string salt
+     * @return string hash
+     */
+    public function hashPassword($password,$salt)
+    {
+        #return md5($salt.$password);
+        return $password;
+    }
+    
+    /**
+     * Generates a salt that can be used to generate a password hash.
+     * @return string the salt
+     */
+    public function generateSalt()
+    {
+        return uniqid('',true);
     }
 
     /**
