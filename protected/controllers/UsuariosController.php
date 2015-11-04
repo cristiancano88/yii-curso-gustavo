@@ -245,12 +245,12 @@ class UsuariosController extends GSeguroController {
 
 //        $auth->assign('rol_edicion',Yii::app()->user->id);
 
-        if(Yii::app()->authManager->checkAccess('rol_edicion',Yii::app()->user->id))
+//        if(Yii::app()->authManager->checkAccess('rol_edicion',Yii::app()->user->id))
 //        if(Yii::app()->authManager->checkAccess('editar_usuarios',Yii::app()->user->id))
-        {
-            echo 'SIIIIII!!!!! je je je ';
-        } else
-            echo 'NOOOOOOOOOO!!!  ha ha ha ha ha ha';
+//        {
+//            echo 'SIIIIII!!!!! je je je ';
+//        } else
+//            echo 'NOOOOOOOOOO!!!  ha ha ha ha ha ha';
 
         //Fin codigo colocado en el video (49 Yii Framework en Espanol PHP AUTENTICACION, AUTORIZACION Y CONTOL DE ACCESO 3)
         //----------------------------
@@ -261,6 +261,8 @@ class UsuariosController extends GSeguroController {
         echo 'title GET: '. $_GET['title'];
 
         //fin codigo del video ( 57 Yii Framework en Español PHP LINKS, URL Y HELPER CHTML )
+        //-------------------------
+        
         
         $dataProvider = new CActiveDataProvider('Usuarios');
         $this->render('index', array(
@@ -272,6 +274,21 @@ class UsuariosController extends GSeguroController {
      * Manages all models.
      */
     public function actionAdmin() {
+        ////video 60
+        if(Yii::app()->request->isAjaxRequest)
+        {
+            echo CJSON::encode($_GET);
+            echo CJSON::encode($_POST);
+            Yii::app()->end();
+        }
+        
+        
+        echo "<pre>";
+        print_r($_POST);
+        print_r($_GET);
+        echo "</pre>";
+        //fin video 60
+        
         $model = new Usuarios('search');
         $model->unsetAttributes();  // clear any default values
         if (isset($_GET['Usuarios']))

@@ -52,19 +52,19 @@ $this->pageTitle = Yii::app()->name;
             <td><?php echo CHtml::link("Mi link a un pdf ( con ruta absoluta )", Yii::app()->request->getBaseUrl(true) . "/upload/ejemplo.pdf"); ?></td>
         </tr>
         <tr class="light">
-            <td>Link doc</td>
-            <td><?php echo CHtml::link("Mi link a un doc", Yii::app()->request->baseUrl . "/upload/ejemplo.jpg", array("confirm" => "Estas seguro?")); ?></td>
+            <td>Link doc ( ventana confirm )</td>
+            <td><?php echo CHtml::link("Mi link a un doc ( ventana confirm )", Yii::app()->request->baseUrl . "/upload/ejemplo.jpg", array("confirm" => "Estas seguro?")); ?></td>
         </tr>
         <tr class="dark">
             <td>Link enviar parametros POST</td>
             <td><?php
                 echo CHtml::link("Parametros POST", "javascript:void(0)", array(
-                    "submit" => array("usuarios/index", "id" => "12345"),
-                    "params" => array("id_post" => "Je je je soy post"),
-                    "confirm" => "Hey cuidado NOOOOOOOO!!!!!",
-                        )
-                );
-                ?></td>
+                    "submit" => array("usuarios/admin", "id" => "12345"), //id: es parametro get
+                    "params" => array("id_post" => "Je je je soy post"), //parametros post
+                    "confirm" => "Hey cuidado NOOOOOOOO!!!!!", //ventana confirm
+                ));
+                ?>
+            </td>
         </tr>
 
         <tr class="dark">
@@ -72,7 +72,8 @@ $this->pageTitle = Yii::app()->name;
             <td><?php
                 echo CHtml::link("Parametros AJAX", "#", array(
                     "ajax" => array(
-                        "url" => $this->createUrl("usuarios/index", array("idget" => "je je soy geT")),
+                        "url" => $this->createUrl("usuarios/admin", array("idget" => "je je soy geT")),
+                        "success" => "alert('ya regrese')",
                         "type" => "post",
                         "dataType" => "html",
                         "data" => array("idpost" => "soy post"),
@@ -85,7 +86,13 @@ $this->pageTitle = Yii::app()->name;
 
         <tr class="dark">
             <td>Link enviar parametros AJAX<div id="escribir"></div></td>
-            <td><?php echo CHtml::ajaxLink("Parametros AJAX", $this->createUrl("usuarios/index", array("idget" => "je je soy geT")), array("update" => "#escribir")); ?></td>
+            <td>
+                <?php 
+                echo CHtml::ajaxLink("Parametros AJAX", $this->createUrl("usuarios/admin", 
+                    array("idget" => "je je soy geT")), 
+                    array("update" => "#escribir")); 
+                ?>
+            </td>
         </tr>
 
         <tr class="dark">
